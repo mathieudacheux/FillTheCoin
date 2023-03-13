@@ -8,9 +8,10 @@ app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.set('views', './views')
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res, next) => {
+  let usersList = await userGet(req, res, next)
   res.render('home', {
-    users: userGet,
+    users: usersList,
   })
 })
 
