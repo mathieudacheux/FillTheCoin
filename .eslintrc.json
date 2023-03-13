@@ -23,17 +23,11 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "react/react-in-jsx-scope": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "warn",
         "@typescript-eslint/no-explicit-any": "warn",
         "spaced-comment": "error",
         "quotes": ["warn", "single"],
         "no-duplicate-imports": "error",
         "no-console": "warn",
         "no-empty-function": "error"
-    },
-    "ignorePatterns": [
-        "tailwind.config.cjs",
-        "vite-env.d.ts"
-    ]
+    }
 }
