@@ -10,6 +10,7 @@ const userGet = async (req, res, next) => {
     const usersData = await getDocs(users)
     const usersList = usersData.docs.map((doc) => doc.data())
     return usersList
+    // res.status(200).json(usersList)
   } catch (error) {
     res.send(error)
   }
