@@ -12,7 +12,8 @@ body {
 
 /* Header */
 
-.logModal {
+.logModal,
+.registerModal {
   position: fixed;
   z-index: 5;
   left: 0;
@@ -411,7 +412,7 @@ h4 {
 }
 
 .explanation-left {
-  width: 58%;
+  width: 48%;
   height: 300px;
   border-radius: 10px;
 }
@@ -424,7 +425,7 @@ h4 {
 }
 
 .explanation-right {
-  width: 40%;
+  width: 45%;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -555,7 +556,6 @@ h4 {
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
-  background-color: rgba(255, 0, 0, 0.05);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
@@ -652,4 +652,5 @@ h4 {
 .agent-content .phone-number {
   color: red;
   height: 20%;
+  text-decoration: none;
 }
