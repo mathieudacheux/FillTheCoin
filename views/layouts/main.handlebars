@@ -109,6 +109,19 @@
         <div class='header-left'>
           <a href='{{url}}/'><img src='./assets/logo.svg' alt='logo' /></a>
         </div>
+        <div class='mobileNav'>
+          <a class='openModal' href='#'><span
+              class='containerBurger'
+            ></span></a>
+          <ul class='mobileNavList'>
+            <li><a href='{{url}}/'>HOME</a></li>
+            <li><a href='{{url}}/agents'>AGENTS</a></li>
+            <li><a href='{{url}}/properties'>PROPERTIES</a></li>
+            <li><a href='{{url}}/blog'>BLOG</a></li>
+            <li><a><button class='logButton'>LOG IN</button></a></li>
+          </ul>
+        </div>
+
         <div class='header-right'>
           <ul>
             <li><a href='{{url}}/'>HOME</a></li>
@@ -218,6 +231,12 @@
     modalRegister.classList.add('is-active');
     modal.classList.remove('is-active'); });
     closeRegister.addEventListener('click', (e) => {
-    modalRegister.classList.remove('is-active'); });
+    modalRegister.classList.remove('is-active'); }); const link =
+    document.querySelector('.openModal'); const burger =
+    document.querySelector('.containerBurger'); const ul =
+    document.querySelector('.mobileNavList'); const openNavMobileView = (e) => {
+    e.preventDefault(); burger.classList.toggle('open');
+    ul.classList.toggle('open'); }; link.addEventListener('click', (e) => {
+    openNavMobileView(e); })
   </script>
 </html>

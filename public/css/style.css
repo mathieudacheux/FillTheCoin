@@ -63,6 +63,10 @@ header {
 
 /* Navbar */
 
+.mobileNav {
+  display: none;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -372,6 +376,7 @@ h4 {
   margin: 1rem 0;
   border-radius: 10px;
   margin-bottom: 4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .city-card-image img {
@@ -386,9 +391,9 @@ h4 {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  background: rgba(255, 0, 0, 0.1);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .country {

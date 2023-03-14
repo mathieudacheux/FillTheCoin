@@ -74,18 +74,94 @@ footer {
 
 /* Header */
 
+/* Burger Menu */
+
+.containerBurger {
+  height: 3px;
+  width: 30px;
+  border-radius: 10px;
+  background: red;
+  display: inline-block;
+  position: relative;
+}
+
+.containerBurger::before,
+.containerBurger::after {
+  content: '';
+  height: 3px;
+  width: 30px;
+  position: absolute;
+  border-radius: 10px;
+  background: black;
+  display: inline-block;
+  transform-origin: center;
+  transition: all 0.5s ease;
+}
+
+.containerBurger::before {
+  top: -8px;
+}
+
+.containerBurger::after {
+  top: 8px;
+}
+
+.containerBurger.open::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.containerBurger.open {
+  background: transparent;
+}
+
+.containerBurger.open::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+ul.open {
+  transform: scaleY(1);
+  -webkit-box-shadow: 0px 30px 25px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 30px 25px 5px rgba(0, 0, 0, 0.15);
+}
+
+ul {
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 110px;
+  width: 100%;
+  z-index: 5;
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem;
+}
+
+ul li {
+  list-style-type: none;
+  padding-bottom: 1rem;
+}
+
+ul li a {
+  text-decoration: none;
+  color: black;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
 }
 
 .header-left img {
   width: 175px;
-
-  margin-left: 1rem;
 }
 
 .header-right {
@@ -266,6 +342,7 @@ form button:hover {
 
 .footer {
   border-top: 1px solid red;
+  padding-top: 1rem;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -390,6 +467,7 @@ h4 {
   height: 300px;
   border-radius: 10px;
   margin-bottom: 5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .city-card-image img {
@@ -404,7 +482,7 @@ h4 {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
-  background: rgba(255, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
