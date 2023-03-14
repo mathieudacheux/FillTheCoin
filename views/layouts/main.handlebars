@@ -1,15 +1,132 @@
 <html lang='fr'>
   <head>
-    <meta charset='utf-8' />
+    <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>My Awesome App</title>
-    <meta
-      name='viewport'
-      content='width=device-width, initial-scale=1.0, viewport-fit=cover'
-    />
-    <link rel='stylesheet' type='text/css' href='./style.css' />
+    <link rel='stylesheet' type='text/css' href='./css/style.css' />
   </head>
   <body>
-    {{{body}}}
+    <header>
+      <div class='links'>
+        <a href='https://www.facebook.com/'><img
+            class='svg'
+            src='./assets/facebook.svg'
+            alt='facebook'
+          /></a>
+        <a href='https://www.instagram.com/'><img
+            class='svg'
+            src='./assets/instagram.svg'
+            alt='instagram'
+          /></a>
+        <a href='https://twitter.com/'><img
+            class='svg'
+            src='./assets/twitter.svg'
+            alt='twitter'
+          /></a>
+        <a href='https://linkedin.com/'><img
+            class='svg'
+            src='./assets/linkedin.svg'
+            alt='youtube'
+          /></a>
+      </div>
+      <div class='header'>
+        <div class='header-left'>
+          <a href='{{homeLink}}'><img src='./assets/logo.svg' alt='logo' /></a>
+        </div>
+        <div class='header-right'>
+          <ul>
+            <li><a href='{{homeLink}}'>HOME</a></li>
+            <li><a href='{{url}}/about'>AGENTS</a></li>
+            <li><a href='{{url}}/contact'>PROPERTIES</a></li>
+            <li><a href='{{url}}/login'>BLOG</a></li>
+            <li><a href='{{url}}/register'><button class='logButton'>LOG IN</button></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class='herobanner'>
+        <div class='herobanner-text'>
+          <h1>Simple way to find the perfect property</h1>
+          <p>We provide a complete service for the sale,
+            <br />
+            purchase or rental of real estate.
+          </p>
+          <div class='search'>
+            <input type='text' placeholder='What is your sector' />
+            <button>Search</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <div class='footer'>
+        <div class='footer-left'>
+          <a href='{{homeLink}}'><img src='./assets/logo.svg' alt='logo' /></a>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            <br />
+            tincidunt, nisl eget ultricies tincidunt, nisl eros
+            <br />
+            tincidunt nisl, nec luctus nisl lorem non nisl.
+          </p>
+          <div class='footer-logo'>
+            <a href='https://www.facebook.com/'><img
+                class='svg'
+                src='./assets/facebook.svg'
+                alt='facebook'
+              /></a>
+            <a href='https://www.instagram.com/'><img
+                class='svg'
+                src='./assets/instagram.svg'
+                alt='instagram'
+              /></a>
+            <a href='https://twitter.com/'><img
+                class='svg'
+                src='./assets/twitter.svg'
+                alt='twitter'
+              /></a>
+            <a href='https://linkedin.com'><img
+                class='svg'
+                src='./assets/linkedin.svg'
+                alt='youtube'
+              /></a>
+          </div>
+          <p>2021. All rights reserved</p>
+        </div>
+        <div class='footer-middleware-left'>
+          <h4>Take a tour</h4>
+          <div class='footer-links'>
+            <a href='{{url}}/features'>Features</a>
+            <a href='{{url}}/partners'>Partners</a>
+            <a href='{{url}}/pricing'>Pricing</a>
+            <a href='{{url}}/product'>Product</a>
+            <a href='{{url}}/support'>Support</a>
+          </div>
+        </div>
+        <div class='footer-middleware-right'>
+          <h4>Our company</h4>
+          <div class='footer-links'>
+            <a href='{{url}}/about'>About Us</a>
+            <a href='{{url}}/agents'>Agents</a>
+            <a href='{{url}}/blog'>Blog</a>
+            <a href='{{url}}/media'>Media</a>
+            <a href='{{url}}/contact-us'>Contact Us</a>
+          </div>
+        </div>
+        <div class='footer-right'>
+          <h4>
+            Subscribe
+          </h4>
+          <p>Subscribe to get latest property, blog, news from us</p>
+          <div class='subscribe'>
+            <input type='text' placeholder='Your email' />
+            <button>Ok</button>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
