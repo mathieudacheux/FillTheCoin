@@ -1,6 +1,5 @@
 import express from 'express'
 import { engine } from 'express-handlebars'
-import { userGet } from './controllers/userController'
 
 const app = express()
 
@@ -10,7 +9,7 @@ app.set('view engine', 'handlebars')
 app.set('views', './views')
 
 app.get('/', (req, res) => {
-  res.render('signIn')
+  res.render('landingpage')
 })
 
 app.listen(3000)
