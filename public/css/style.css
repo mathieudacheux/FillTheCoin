@@ -31,6 +31,8 @@ body {
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  width: 400px;
+  height: 400px;
 }
 
 .container-close {
@@ -535,4 +537,119 @@ h4 {
   background-color: red;
   color: white;
   border-radius: 5px;
+}
+
+/* Blog */
+
+.container-articles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.article-card {
+  width: 100%;
+  height: 300px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(255, 0, 0, 0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.article-card img {
+  width: 40%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.article-card .article-content {
+  width: 55%;
+}
+
+.article-card .article-content h3 {
+  font-size: 2rem;
+  width: 100%;
+  height: 20%;
+}
+
+.article-card .article-content .description {
+  width: 100%;
+  height: 60%;
+}
+
+.article-card .article-content .container-button {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+}
+
+.article-card .article-content .container-button a {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background-color: red;
+  border-radius: 5px;
+  color: white;
+}
+
+/* Agents */
+
+.agents-container {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.agent-card {
+  height: 500px;
+  width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.agent-img {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.agent-card .agent-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.agent-content {
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 20%;
+}
+
+.agent-content .description {
+  height: 40%;
+}
+
+.agent-content .phone-number {
+  color: red;
+  height: 20%;
 }
