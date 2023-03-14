@@ -7,9 +7,45 @@
       name='viewport'
       content='width=device-width, initial-scale=1.0, viewport-fit=cover'
     />
-    <link rel='stylesheet' type='text/css' href='./style.css' />
+    <link rel='stylesheet' type='text/css' href='./css/style.css' />
   </head>
   <body>
-    {{{body}}}
+    <header>
+      <div class='links'>
+        <a href='https://www.facebook.com/'><img
+            src='./assets/facebook.svg'
+            alt='facebook'
+          /></a>
+        <a href='https://www.instagram.com/'><img
+            src='./assets/instagram.svg'
+            alt='instagram'
+          /></a>
+        <a href='https://twitter.com/'><img
+            src='./assets/twitter.svg'
+            alt='twitter'
+          /></a>
+        <a href='https://www.youtube.com/'><img
+            src='./assets/youtube.svg'
+            alt='youtube'
+          /></a>
+      </div>
+      <div class='header'>
+        <div class='header-left'>
+          <a href='{{homeLink}}'><img src='./assets/logo.svg' alt='logo' /></a>
+        </div>
+        <div class='header-right'>
+          <ul>
+            <li><a href='{{homeLink}}'>HOME</a></li>
+            <li><a href='{{url}}/about'>AGENTS</a></li>
+            <li><a href='{{url}}/contact'>PROPERTIES</a></li>
+            <li><a href='{{url}}/login'>BLOG</a></li>
+            <li><a href='{{url}}/register'><button class='logButton'>LOG IN</button></a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
   </body>
 </html>
