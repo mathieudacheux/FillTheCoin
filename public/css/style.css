@@ -35,6 +35,9 @@ body {
   width: 400px;
   height: 400px;
 }
+.links {
+  padding-top: 1rem;
+}
 
 .container-close {
   display: flex;
