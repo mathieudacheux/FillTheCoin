@@ -7,24 +7,56 @@
     <link rel='stylesheet' type='text/css' href='./css/style.css' />
   </head>
   <body>
+    <div class='logModal'>
+      <div class='modal-content'>
+        <div class='container-close'>
+          <span class='close-modal'>&times;</span>
+        </div>
+        <form action='{{url}}/login' method='POST'>
+          <div class='form-group'>
+            <label for='email'>Email</label>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              placeholder='Enter your email'
+            />
+          </div>
+          <div class='form-group'>
+            <label for='password'>Password</label>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              placeholder='Enter your password'
+            />
+          </div>
+          <div class='form-group'>
+            <button type='submit'>Log In</button>
+            <p>Don't have an account?
+              <a href='{{url}}/register'>Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
     <header>
       <div class='links'>
-        <a href='https://www.facebook.com/'><img
+        <a href='https://www.facebook.com/' target='_blank'><img
             class='svg'
             src='./assets/facebook.svg'
             alt='facebook'
           /></a>
-        <a href='https://www.instagram.com/'><img
+        <a href='https://www.instagram.com/' target='_blank'><img
             class='svg'
             src='./assets/instagram.svg'
             alt='instagram'
           /></a>
-        <a href='https://twitter.com/'><img
+        <a href='https://twitter.com/' target='_blank'><img
             class='svg'
             src='./assets/twitter.svg'
             alt='twitter'
           /></a>
-        <a href='https://linkedin.com/'><img
+        <a href='https://linkedin.com/' target='_blank'><img
             class='svg'
             src='./assets/linkedin.svg'
             alt='youtube'
@@ -37,10 +69,10 @@
         <div class='header-right'>
           <ul>
             <li><a href='{{homeLink}}'>HOME</a></li>
-            <li><a href='{{url}}/about'>AGENTS</a></li>
-            <li><a href='{{url}}/contact'>PROPERTIES</a></li>
-            <li><a href='{{url}}/login'>BLOG</a></li>
-            <li><a href='{{url}}/register'><button class='logButton'>LOG IN</button></a></li>
+            <li><a href='{{url}}/agents'>AGENTS</a></li>
+            <li><a href='{{url}}/properties'>PROPERTIES</a></li>
+            <li><a href='{{url}}/blog'>BLOG</a></li>
+            <li><a><button class='logButton'>LOG IN</button></a></li>
           </ul>
         </div>
       </div>
@@ -73,22 +105,22 @@
             tincidunt nisl, nec luctus nisl lorem non nisl.
           </p>
           <div class='footer-logo'>
-            <a href='https://www.facebook.com/'><img
+            <a href='https://www.facebook.com/' target='_blank'><img
                 class='svg'
                 src='./assets/facebook.svg'
                 alt='facebook'
               /></a>
-            <a href='https://www.instagram.com/'><img
+            <a href='https://www.instagram.com/' target='_blank'><img
                 class='svg'
                 src='./assets/instagram.svg'
                 alt='instagram'
               /></a>
-            <a href='https://twitter.com/'><img
+            <a href='https://twitter.com/' target='_blank'><img
                 class='svg'
                 src='./assets/twitter.svg'
                 alt='twitter'
               /></a>
-            <a href='https://linkedin.com'><img
+            <a href='https://linkedin.com' target='_blank'><img
                 class='svg'
                 src='./assets/linkedin.svg'
                 alt='youtube'
@@ -129,4 +161,13 @@
       </div>
     </footer>
   </body>
+  <script>
+    const loginButton = document.querySelector('.logButton'); const modal =
+    document.querySelector('.logModal'); const closeModal =
+    document.querySelector('.close-modal');
+    loginButton.addEventListener('click',(e) => {
+    modal.classList.add('is-active'); });
+    closeModal.addEventListener('click',(e) => {
+    modal.classList.remove('is-active'); });
+  </script>
 </html>
