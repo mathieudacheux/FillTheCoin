@@ -79,57 +79,20 @@
     <a href='{{url}}/all'>See all</a>
   </div>
   <div class='container-properties'>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
+    {{#each estates}}
+      <div class='card-property'>
+        <img src={{this.image}} alt={{this.description}} />
+        <div class='property-content'>
+          <h5>
+            {{this.address}}
+          </h5>
+          <p class='description'>{{this.description}}</p>
+          <div class='information-content'>
+            <p>{{this.city}}</p>
+            <p class='button-text'>${{this.price}}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
+    {{/each}}
   </div>
 </div>

@@ -1,96 +1,17 @@
 <div class='main'>
-  <h2 class='subtitle'>Our properties</h2>
-  <div class='container-properties'>
+  {{#each estates}}
     <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
+      <img src={{this.image}} alt={{this.description}} />
       <div class='property-content'>
         <h5>
-          Title flat
+          {{this.address}}
         </h5>
-        <p class='description'>Description</p>
+        <p class='description'>{{this.description}}</p>
         <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
+          <p>{{this.city}}</p>
+          <p class='button-text'>${{this.price}}</p>
         </div>
       </div>
     </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
-    <div class='card-property'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='property-content'>
-        <h5>
-          Title flat
-        </h5>
-        <p class='description'>Description</p>
-        <div class='information-content'>
-          <p>Posted by Mathieu</p>
-          <p class='button-text'>$2000</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  {{/each}}
 </div>
