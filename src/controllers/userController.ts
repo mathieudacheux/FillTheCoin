@@ -2,7 +2,7 @@ import db from '../db'
 import UserType from '../models/user'
 import { genSalt, hash, compare } from 'bcrypt'
 import admin from 'firebase-admin'
-import getAllEstate from './estateController'
+// import getAllEstate from './estateController'
 
 const postUser = async (req, res) => {
   try {
@@ -39,15 +39,21 @@ const isExist = async (req, res) => {
     )
     if (!compareUser) {
       res.status(404).send({ message: 'Authentification failed' })
-    } else {
-      req.session.idUser = user.docs[0].data().id
-      console.log(req.session)
+      console.log('Authentification failed')
 
+      // const estates = await getAllEstate(req, res)
+      // return res.redirect('/landingpage')
+    } else {
+      console.log('Authentificated')
+
+      req.session.idUser = user.docs[0].data().id
       res.status(200).send({ message: 'Authentificated' })
-      const estates = await getAllEstate(req, res)
-      return res.redirect('/landingpage', { estates, connected: true })
+      // const estates = await getAllEstate(req, res)
+      // return res.redirect('/landingpage')
     }
   } catch (error) {
+    console.log('catch')
+
     res.send(error.message)
   }
 }
