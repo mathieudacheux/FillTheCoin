@@ -1,70 +1,19 @@
-{{#each articles}}
-  <h2>{{this.title}}</h2>
-  <img src={{this.image}} />
-{{/each}}
-
 <div class='main'>
   <h2 class='subtitle'>Our articles</h2>
   <div class='container-articles'>
-    <div class='article-card'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='article-content'>
-        <h3>
-          Article title
-        </h3>
-        <p class='description'>Description</p>
-        <div class='container-button'>
-          <a href='{{url}}/blog/{{id}}'>Read more</a>
+    {{#each articles}}
+      <div class='article-card'>
+        <img src={{this.image}} alt={{this.title}} />
+        <div class='article-content'>
+          <h3>
+            {{this.title}}
+          </h3>
+          <p class='description'>{{this.description}}</p>
+          <div class='container-button'>
+            <a href='{{url}}/blog/{{id}}'>Read more</a>
+          </div>
         </div>
       </div>
-    </div>
-    <div class='article-card'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='article-content'>
-        <h3>
-          Article title
-        </h3>
-        <p class='description'>Description</p>
-        <div class='container-button'>
-          <a href='{{url}}/blog/{{id}}'>Read more</a>
-        </div>
-      </div>
-    </div>
-    <div class='article-card'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='article-content'>
-        <h3>
-          Article title
-        </h3>
-        <p class='description'>Description</p>
-        <div class='container-button'>
-          <a href='{{url}}/blog/{{id}}'>Read more</a>
-        </div>
-      </div>
-    </div>
-    <div class='article-card'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='article-content'>
-        <h3>
-          Article title
-        </h3>
-        <p class='description'>Description</p>
-        <div class='container-button'>
-          <a href='{{url}}/blog/{{id}}'>Read more</a>
-        </div>
-      </div>
-    </div>
-    <div class='article-card'>
-      <img src='./assets/ghana.jpg' alt='city' />
-      <div class='article-content'>
-        <h3>
-          Article title
-        </h3>
-        <p class='description'>Description</p>
-        <div class='container-button'>
-          <a href='{{url}}/blog/{{id}}'>Read more</a>
-        </div>
-      </div>
-    </div>
+    {{/each}}
   </div>
 </div>
