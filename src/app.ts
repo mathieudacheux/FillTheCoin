@@ -18,10 +18,18 @@ app.set('views', './src/views')
 app.get('/', async (req, res, next) => {
   try {
     const estates = await getAllEstate(req, res)
-    res.render('home', { estates })
+    res.render('landingpage', { estates })
   } catch (error) {
     res.send(error.message)
   }
+})
+
+app.get('/agents', (req, res) => {
+  res.render('agents')
+})
+
+app.get('/properties', (req, res) => {
+  res.render('properties')
 })
 
 // Display the inscription page

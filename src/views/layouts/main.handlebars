@@ -1,15 +1,245 @@
 <html lang='fr'>
   <head>
-    <meta charset='utf-8' />
+    <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>My Awesome App</title>
-    <meta
-      name='viewport'
-      content='width=device-width, initial-scale=1.0, viewport-fit=cover'
+    <link
+      rel='stylesheet'
+      type='text/css'
+      media='screen and (max-width: 768px)'
+      href='./css/mobile.css'
     />
-    <link rel='stylesheet' type='text/css' href='./style.css' />
+    <link
+      rel='stylesheet'
+      type='text/css'
+      media='screen and (min-width: 769px)'
+      href='./css/style.css'
+    />
   </head>
   <body>
-    {{{body}}}
+    <div class='logModal'>
+      <div class='modal-content'>
+        <div class='container-close'>
+          <span class='close-modal'>&times;</span>
+        </div>
+        <h4 style='text-align: center;'>Login</h4>
+        <form action='{{url}}/login' method='POST'>
+          <div class='form-group'>
+            <label for='email'>Email</label>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              placeholder='Enter your email'
+            />
+          </div>
+          <div class='form-group'>
+            <label for='password'>Password</label>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              placeholder='Enter your password'
+            />
+          </div>
+          <div class='form-group'>
+            <button type='submit'>Log In</button>
+            <p>Don't have an account?
+              <a class='registerButton'>Register</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class='registerModal'>
+      <div class='modal-content'>
+        <div class='container-close'>
+          <span class='close-modalRegister'>&times;</span>
+        </div>
+        <h4 style='text-align: center;'>Sign-in</h4>
+        <form action='{{url}}/login' method='POST'>
+          <div class='form-group'>
+            <label for='email'>Email</label>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              placeholder='Enter your email'
+            />
+          </div>
+          <div class='form-group'>
+            <label for='password'>Password</label>
+            <input
+              type='password'
+              name='password'
+              id='password'
+              placeholder='Enter your password'
+            />
+          </div>
+          <div class='form-group'>
+            <button type='submit'>Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <header>
+      <div class='headerHeader'>
+        <div class='links'>
+          <a href='https://www.facebook.com/' target='_blank'><img
+              class='svg'
+              src='./assets/facebook.svg'
+              alt='facebook'
+            /></a>
+          <a href='https://www.instagram.com/' target='_blank'><img
+              class='svg'
+              src='./assets/instagram.svg'
+              alt='instagram'
+            /></a>
+          <a href='https://twitter.com/' target='_blank'><img
+              class='svg'
+              src='./assets/twitter.svg'
+              alt='twitter'
+            /></a>
+          <a href='https://linkedin.com/' target='_blank'><img
+              class='svg'
+              src='./assets/linkedin.svg'
+              alt='youtube'
+            /></a>
+        </div>
+        <a href='tel:+0646085456'>06.46.01.44.35</a>
+      </div>
+      <div class='header'>
+        <div class='header-left'>
+          <a href='{{url}}/'><img src='./assets/logo.svg' alt='logo' /></a>
+        </div>
+        <div class='mobileNav'>
+          <a class='openModal' href='#'><span
+              class='containerBurger'
+            ></span></a>
+          <ul class='mobileNavList'>
+            <li><a href='{{url}}/'>Home</a></li>
+            <li><a href='{{url}}/agents'>Agents</a></li>
+            <li><a href='{{url}}/properties'>Properties</a></li>
+            <li><a href='{{url}}/blog'>Blog</a></li>
+            <li><a><button class='logButton'>Login</button></a></li>
+          </ul>
+        </div>
+
+        <div class='header-right'>
+          <ul>
+            <li><a href='{{url}}/'>Home</a></li>
+            <li><a href='{{url}}/agents'>Agents</a></li>
+            <li><a href='{{url}}/properties'>Properties</a></li>
+            <li><a href='{{url}}/blog'>Blog</a></li>
+            <li><a><button class='logButton'>Login</button></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class='herobanner'>
+        <div class='herobanner-text'>
+          <h1>Simple way to find the perfect property</h1>
+          <p>We provide a complete service for the sale,
+            <br />
+            purchase or rental of real estate.
+          </p>
+          <div class='search'>
+            <input type='text' placeholder='What is your sector' />
+            <button>Search</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <div class='footer'>
+        <div class='footer-left'>
+          <a href='{{homeLink}}'><img src='./assets/logo.svg' alt='logo' /></a>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            <br />
+            tincidunt, nisl eget ultricies tincidunt, nisl eros
+            <br />
+            tincidunt nisl, nec luctus nisl lorem non nisl.
+          </p>
+          <div class='footer-logo'>
+            <a href='https://www.facebook.com/' target='_blank'><img
+                class='svg'
+                src='./assets/facebook.svg'
+                alt='facebook'
+              /></a>
+            <a href='https://www.instagram.com/' target='_blank'><img
+                class='svg'
+                src='./assets/instagram.svg'
+                alt='instagram'
+              /></a>
+            <a href='https://twitter.com/' target='_blank'><img
+                class='svg'
+                src='./assets/twitter.svg'
+                alt='twitter'
+              /></a>
+            <a href='https://linkedin.com' target='_blank'><img
+                class='svg'
+                src='./assets/linkedin.svg'
+                alt='youtube'
+              /></a>
+          </div>
+          <p>2021. All rights reserved</p>
+        </div>
+        <div class='footer-middleware-left'>
+          <h4>Take a tour</h4>
+          <div class='footer-links'>
+            <a href='{{url}}/features'>Features</a>
+            <a href='{{url}}/partners'>Partners</a>
+            <a href='{{url}}/pricing'>Pricing</a>
+            <a href='{{url}}/product'>Product</a>
+            <a href='{{url}}/support'>Support</a>
+          </div>
+        </div>
+        <div class='footer-middleware-right'>
+          <h4>Our company</h4>
+          <div class='footer-links'>
+            <a href='{{url}}/about'>About Us</a>
+            <a href='{{url}}/agents'>Agents</a>
+            <a href='{{url}}/blog'>Blog</a>
+            <a href='{{url}}/media'>Media</a>
+            <a href='{{url}}/contact-us'>Contact Us</a>
+          </div>
+        </div>
+        <div class='footer-right'>
+          <h4>
+            Subscribe
+          </h4>
+          <p>Subscribe to get latest property, blog, news from us</p>
+          <div class='subscribe'>
+            <input type='text' placeholder='Your email' />
+            <button>Ok</button>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
+  <script>
+    const loginButton = document.querySelector('.logButton'); const modal =
+    document.querySelector('.logModal'); const closeModal =
+    document.querySelector('.close-modal'); const registerButton =
+    document.querySelector('.registerButton'); const modalRegister =
+    document.querySelector('.registerModal'); const closeRegister =
+    document.querySelector('.close-modalRegister');
+    loginButton.addEventListener('click', (e) => {
+    modal.classList.add('is-active') }); closeModal.addEventListener('click',
+    (e) => { modal.classList.remove('is-active') });
+    registerButton.addEventListener('click', (e) => {
+    modalRegister.classList.add('is-active');
+    modal.classList.remove('is-active'); });
+    closeRegister.addEventListener('click', (e) => {
+    modalRegister.classList.remove('is-active'); }); const link =
+    document.querySelector('.openModal'); const burger =
+    document.querySelector('.containerBurger'); const ul =
+    document.querySelector('.mobileNavList'); const openNavMobileView = (e) => {
+    e.preventDefault(); burger.classList.toggle('open');
+    ul.classList.toggle('open'); }; link.addEventListener('click', (e) => {
+    openNavMobileView(e); })
+  </script>
 </html>
