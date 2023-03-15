@@ -1,6 +1,8 @@
 import express from 'express'
 import { engine } from 'express-handlebars'
+import getAllCities from './controllers/citiyController'
 import getAllEstate from './controllers/estateController'
+import agentRouter from './routes/agentRouter'
 import session from 'express-session'
 import SESSION_SERCRET from './config'
 
@@ -38,22 +40,24 @@ app.set('views', './src/views')
 app.use('/', async (req, res) => {
   try {
     const estates = await getAllEstate(req, res)
+    const cities = await getAllCities(req, res)
     if (req.session.idUser) {
       res.render('landingpage', { estates, connected: true })
     } else {
-      res.render('landingpage', { estates, connected: false })
+      res.render('landingpage', { estates, cities, connected: false })
     }
   } catch (error) {
     res.send(error.message)
   }
 })
 
-app.get('/agents', (req, res) => {
-  res.render('agents')
-})
-
-app.get('/properties', (req, res) => {
-  res.render('properties')
+app.get('/properties', async (req, res) => {
+  try {
+    const estates = await getAllEstate(req, res)
+    res.render('properties', { estates })
+  } catch (error) {
+    res.send(error.message)
+  }
 })
 
 // Display the inscription page
@@ -61,6 +65,8 @@ app.use('/user', userRouter)
 
 // Display the blog page
 app.use('/blog', articleRouter)
+
+app.use('/agents', agentRouter)
 
 const PORT = process.env.PORT || 3000
 

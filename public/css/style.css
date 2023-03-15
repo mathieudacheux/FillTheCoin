@@ -5,8 +5,7 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   position: relative;
   font-size: 16px;
 }
@@ -27,14 +26,20 @@ body {
   justify-content: center;
   align-items: center;
   display: none;
+  transition: background-color 0.5s ease;
 }
 
 .modal-content {
+  position: relative;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   width: 400px;
   height: 400px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .headerHeader {
@@ -51,9 +56,9 @@ body {
 }
 
 .container-close {
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem 1rem 1rem 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .container-close span {
@@ -118,7 +123,7 @@ header-right {
   color: red;
 }
 
-.logButton {
+.logButtonDesktop {
   border: none;
   background: red;
   background-color: #e90808;
@@ -140,13 +145,13 @@ header-right {
   height: 650px;
   background: linear-gradient(
       to right,
-      rgba(255, 255, 255, 0.95),
+      rgba(255, 255, 255, 0.75),
       rgba(255, 255, 255, 0)
     ),
     url('../assets/herobanner.jpg');
 
   background-size: cover;
-  background-position: right;
+  background-position: center;
   border-radius: 14px;
   display: flex;
   justify-content: flex-start;
@@ -407,7 +412,7 @@ h4 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: bottom;
+  object-position: center;
   border-top-right-radius: 14px;
   border-top-left-radius: 14px;
 }
@@ -584,7 +589,6 @@ h4 {
 .article-card {
   width: 100%;
   height: 300px;
-  padding: 2rem;
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
@@ -593,26 +597,29 @@ h4 {
 }
 
 .article-card img {
-  width: 40%;
+  width: 50%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 5px;
+  object-position: top;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .article-card .article-content {
-  width: 55%;
+  width: 45%;
+  padding: 2rem;
+  height: 100%;
 }
 
 .article-card .article-content h3 {
   font-size: 2rem;
   width: 100%;
-  height: 20%;
+  height: 40%;
 }
 
 .article-card .article-content .description {
   width: 100%;
-  height: 60%;
+  height: 40%;
 }
 
 .article-card .article-content .container-button {
@@ -642,9 +649,9 @@ h4 {
 }
 
 .agent-card {
-  height: 500px;
+  height: 525px;
   width: 350px;
-  border-radius: 10px;
+  border-radius: 14px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   margin-bottom: 2rem;
@@ -654,14 +661,17 @@ h4 {
   height: 250px;
   width: 100%;
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .agent-card .agent-img img {
-  width: 100%;
-  height: 100%;
+  width: 250px;
+  height: 250px;
   border-radius: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
 }
 
 .agent-content {
@@ -679,6 +689,14 @@ h4 {
 
 .agent-content .description {
   height: 40%;
+  width: 100%;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  white-space: no-wrap;
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 .agent-content .phone-number {
