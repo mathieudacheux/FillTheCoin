@@ -589,7 +589,6 @@ h4 {
 .article-card {
   width: 100%;
   height: 300px;
-  padding: 2rem;
   margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
@@ -598,26 +597,29 @@ h4 {
 }
 
 .article-card img {
-  width: 40%;
+  width: 50%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 5px;
+  object-position: top;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 .article-card .article-content {
-  width: 55%;
+  width: 45%;
+  padding: 2rem;
+  height: 100%;
 }
 
 .article-card .article-content h3 {
   font-size: 2rem;
   width: 100%;
-  height: 20%;
+  height: 40%;
 }
 
 .article-card .article-content .description {
   width: 100%;
-  height: 60%;
+  height: 40%;
 }
 
 .article-card .article-content .container-button {
