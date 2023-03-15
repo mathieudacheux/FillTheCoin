@@ -17,7 +17,7 @@ app.use(
     secret: SESSION_SERCRET,
     resave: false,
     saveUninitialized: true,
-    // cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 },
+    cookie: { secure: false, maxAge: 1000 * 60 * 60 * 24 * 7 },
   }),
 )
 app.use(express.json())
