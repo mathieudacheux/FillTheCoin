@@ -500,8 +500,8 @@ h4 {
 .city-card-image img {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: top;
   border-top-right-radius: 14px;
   border-top-left-radius: 14px;
 }
@@ -756,17 +756,19 @@ h4 {
 
 .agent-img {
   height: 250px;
-  width: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
 .agent-card .agent-img img {
   height: 250px;
-  width: 100%;
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 250%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .agent-content {

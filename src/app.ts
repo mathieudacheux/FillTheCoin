@@ -1,5 +1,6 @@
 import express from 'express'
 import { engine } from 'express-handlebars'
+import getAllCities from './controllers/citiyController'
 import getAllEstate from './controllers/estateController'
 import agentRouter from './routes/agentRouter'
 
@@ -19,7 +20,8 @@ app.set('views', './src/views')
 app.get('/', async (req, res, next) => {
   try {
     const estates = await getAllEstate(req, res)
-    res.render('landingpage', { estates })
+    const cities = await getAllCities(req, res)
+    res.render('landingpage', { estates, cities })
   } catch (error) {
     res.send(error.message)
   }

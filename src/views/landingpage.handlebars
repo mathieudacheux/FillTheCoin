@@ -1,42 +1,17 @@
 <div class='main'>
   <h2 class='subtitle'>We are available in different cities across the globe</h2>
   <div class='city-container'>
-    <div class='city-card'>
-      <div class='city-card-image'>
-        <img src='./assets/ghana.jpg' alt='city' />
+    {{#each cities}}
+      <div class='city-card'>
+        <div class='city-card-image'>
+          <img src={{this.image}} alt={{this.name}} />
+        </div>
+        <div class='city-card-content'>
+          <h3>{{this.name}}, <span class='country'>{{this.country}}</span></h3>
+          <a href='{{url}}/properties'>Explore</a>
+        </div>
       </div>
-      <div class='city-card-content'>
-        <h3>cmama, <span class='country'>cmcam</span></h3>
-        <a href='{{url}}/properties'>Explore</a>
-      </div>
-    </div>
-    <div class='city-card'>
-      <div class='city-card-image'>
-        <img src='./assets/ghana.jpg' alt='city' />
-      </div>
-      <div class='city-card-content'>
-        <h3>cmama, <span class='country'>cmcam</span></h3>
-        <a href='{{url}}/properties'>Explore</a>
-      </div>
-    </div>
-    <div class='city-card'>
-      <div class='city-card-image'>
-        <img src='./assets/ghana.jpg' alt='city' />
-      </div>
-      <div class='city-card-content'>
-        <h3>cmama, <span class='country'>cmcam</span></h3>
-        <a href='{{url}}/properties'>Explore</a>
-      </div>
-    </div>
-    <div class='city-card'>
-      <div class='city-card-image'>
-        <img src='./assets/ghana.jpg' alt='city' />
-      </div>
-      <div class='city-card-content'>
-        <h3>cmama, <span class='country'>cmcam</span></h3>
-        <a href='{{url}}/properties'>Explore</a>
-      </div>
-    </div>
+    {{/each}}
   </div>
   <h2 class='subtitle'>Why you should choose us.</h2>
   <div class='explanation-container'>
