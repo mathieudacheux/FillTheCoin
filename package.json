@@ -2,9 +2,9 @@
   "name": "fillthecoin",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/app.js",
   "scripts": {
-    "start": "tsc && eslint --ext .ts && node dist/app.js",
+    "start": "tsc && eslint --ext .ts && node dist/src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^7.0.2"
+    "express-handlebars": "^7.0.2",
+    "firebase-admin": "^11.5.0"
   }
 }
