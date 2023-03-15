@@ -4,6 +4,13 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>My Awesome App</title>
+    <link rel='shortcut icon' href='./assets/favicon.png' type='image/x-icon' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap'
+      rel='stylesheet'
+    />
     <link
       rel='stylesheet'
       type='text/css'
@@ -16,6 +23,7 @@
       media='screen and (min-width: 769px)'
       href='./css/style.css'
     />
+    <script defer src='./js/modal.js'></script>
   </head>
   <body>
     <div class='logModal'>
@@ -23,8 +31,7 @@
         <div class='container-close'>
           <span class='close-modal'>&times;</span>
         </div>
-        <h4 style='text-align: center;'>Login</h4>
-        <form action='{{url}}/login' method='POST'>
+        <form action='/user/login' method='POST'>
           <div class='form-group'>
             <label for='email'>Email</label>
             <input
@@ -56,8 +63,7 @@
         <div class='container-close'>
           <span class='close-modalRegister'>&times;</span>
         </div>
-        <h4 style='text-align: center;'>Sign-in</h4>
-        <form action='{{url}}/login' method='POST'>
+        <form action='/user/signIn' method='POST'>
           <div class='form-group'>
             <label for='email'>Email</label>
             <input
@@ -121,7 +127,12 @@
             <li><a href='{{url}}/agents'>Agents</a></li>
             <li><a href='{{url}}/properties'>Properties</a></li>
             <li><a href='{{url}}/blog'>Blog</a></li>
-            <li><a><button class='logButton'>Login</button></a></li>
+            {{#if connected}}
+              <li><a><p class='logButtonMobile'>My Account</p></a></li>
+            {{else}}
+              <li><a><button class='logButtonMobile'>Login</button></a></li>
+            {{/if}}
+
           </ul>
         </div>
 
@@ -131,7 +142,11 @@
             <li><a href='{{url}}/agents'>Agents</a></li>
             <li><a href='{{url}}/properties'>Properties</a></li>
             <li><a href='{{url}}/blog'>Blog</a></li>
-            <li><a><button class='logButton'>Login</button></a></li>
+            {{#if connected}}
+              <li><a><p class='logButtonDesktop'>My Account</p></a></li>
+            {{else}}
+              <li><a><button class='logButtonDesktop'>Login</button></a></li>
+            {{/if}}
           </ul>
         </div>
       </div>
@@ -185,7 +200,7 @@
                 alt='youtube'
               /></a>
           </div>
-          <p>2021. All rights reserved</p>
+          <p>2023. All rights reserved</p>
         </div>
         <div class='footer-middleware-left'>
           <h4>Take a tour</h4>
@@ -220,26 +235,4 @@
       </div>
     </footer>
   </body>
-  <script>
-    const loginButton = document.querySelector('.logButton'); const modal =
-    document.querySelector('.logModal'); const closeModal =
-    document.querySelector('.close-modal'); const registerButton =
-    document.querySelector('.registerButton'); const modalRegister =
-    document.querySelector('.registerModal'); const closeRegister =
-    document.querySelector('.close-modalRegister');
-    loginButton.addEventListener('click', (e) => {
-    modal.classList.add('is-active') }); closeModal.addEventListener('click',
-    (e) => { modal.classList.remove('is-active') });
-    registerButton.addEventListener('click', (e) => {
-    modalRegister.classList.add('is-active');
-    modal.classList.remove('is-active'); });
-    closeRegister.addEventListener('click', (e) => {
-    modalRegister.classList.remove('is-active'); }); const link =
-    document.querySelector('.openModal'); const burger =
-    document.querySelector('.containerBurger'); const ul =
-    document.querySelector('.mobileNavList'); const openNavMobileView = (e) => {
-    e.preventDefault(); burger.classList.toggle('open');
-    ul.classList.toggle('open'); }; link.addEventListener('click', (e) => {
-    openNavMobileView(e); })
-  </script>
 </html>

@@ -1,6 +1,6 @@
 interface UserType {
   id?: number
-  mail: string
+  email: string
   password: string
 }
 
