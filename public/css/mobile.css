@@ -500,8 +500,8 @@ h4 {
 .city-card-image img {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: top;
   border-top-right-radius: 14px;
   border-top-left-radius: 14px;
 }
@@ -685,7 +685,6 @@ h4 {
 .article-card {
   width: 100%;
   height: 450px;
-  padding: 2rem;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
@@ -697,25 +696,27 @@ h4 {
 .article-card img {
   width: 100%;
   height: 50%;
-  background-size: cover;
-  background-position: center;
-  border-radius: 5px;
+  object-fit: cover;
+  object-position: top;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .article-card .article-content {
   width: 100%;
   height: 50%;
+  padding: 2rem;
 }
 
 .article-card .article-content h3 {
   font-size: 2rem;
   width: 100%;
-  height: 20%;
+  height: 40%;
 }
 
 .article-card .article-content .description {
   width: 100%;
-  height: 60%;
+  height: 40%;
 }
 
 .article-card .article-content .container-button {
@@ -755,17 +756,19 @@ h4 {
 
 .agent-img {
   height: 250px;
-  width: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
 .agent-card .agent-img img {
   height: 250px;
-  width: 100%;
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 250%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
 }
 
 .agent-content {

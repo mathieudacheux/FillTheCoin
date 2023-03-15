@@ -5,7 +5,11 @@ var agentRouter = express.Router()
 agentRouter.get('/', async (req, res, next) => {
   try {
     const agents = await getAllAgents(req, res)
-    res.render('agents', { agents })
+    if (req.session.idUser) {
+      res.render('agents', { agents, connected: true })
+    } else {
+      res.render('agents', { agents, connected: false })
+    }
   } catch (error) {
     res.send(error.message)
   }

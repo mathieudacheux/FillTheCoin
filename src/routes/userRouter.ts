@@ -1,15 +1,9 @@
-import postUser from '../controllers/userController'
+import { postUser, isExist } from '../controllers/userController'
 var express = require('express')
-var articleRouter = express.Router()
+var userRouter = express.Router()
 
 // middleware that is specific to this router
-articleRouter.post('/create', postUser)
-articleRouter.get('/', (req, res, next) => {
-  try {
-    res.render('user')
-  } catch (error) {
-    res.send(error.message)
-  }
-})
+userRouter.post('/signIn', postUser)
+userRouter.post('/login', isExist)
 
-export default articleRouter
+export default userRouter
