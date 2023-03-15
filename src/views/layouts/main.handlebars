@@ -24,7 +24,7 @@
           <span class='close-modal'>&times;</span>
         </div>
         <h4 style='text-align: center;'>Login</h4>
-        <form action='{{url}}/login' method='POST'>
+        <form action='/user/login' method='POST'>
           <div class='form-group'>
             <label for='email'>Email</label>
             <input
@@ -57,7 +57,7 @@
           <span class='close-modalRegister'>&times;</span>
         </div>
         <h4 style='text-align: center;'>Sign-in</h4>
-        <form action='{{url}}/login' method='POST'>
+        <form action='/user/signIn' method='POST'>
           <div class='form-group'>
             <label for='email'>Email</label>
             <input
@@ -83,6 +83,11 @@
       </div>
     </div>
     <header>
+      {{#if connected}}
+        <div>CONNECTION</div>
+      {{else}}
+        <div>NO CONNECTION</div>
+      {{/if}}
       <div class='headerHeader'>
         <div class='links'>
           <a href='https://www.facebook.com/' target='_blank'><img
