@@ -1,15 +1,17 @@
-import database from '../firebaseConfig'
-import { collection, getDocs } from 'firebase/firestore/lite'
+import db from '../db'
+import UserType from '../models/user'
 
-const getUser = async (req, res, next) => {
+const postUser = async (req, res) => {
   try {
-    const users = await collection(database, 'user')
-    const usersData = await getDocs(users)
-    const userList = usersData.docs.map((doc) => doc.data())
-    return userList
+    const userJson: UserType = {
+      mail: req.body.mail,
+      password: req.body.password,
+    }
+    const response = db.collection('user').doc().set(userJson)
+    res.status(201).send(response)
   } catch (error) {
-    res.send(error)
+    res.send(error.message)
   }
 }
 
-export { getUser }
+export default postUser
