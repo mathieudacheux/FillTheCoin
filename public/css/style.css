@@ -26,14 +26,20 @@ body {
   justify-content: center;
   align-items: center;
   display: none;
+  transition: background-color 0.5s ease;
 }
 
 .modal-content {
+  position: relative;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   width: 400px;
   height: 400px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .headerHeader {
@@ -50,9 +56,9 @@ body {
 }
 
 .container-close {
-  display: flex;
-  justify-content: flex-end;
-  padding: 1rem 1rem 1rem 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .container-close span {
@@ -117,7 +123,7 @@ header-right {
   color: red;
 }
 
-.logButton {
+.logButtonDesktop {
   border: none;
   background: red;
   background-color: #e90808;
@@ -680,7 +686,7 @@ h4 {
 }
 
 .agent-content .description {
-  height: 39%;
+  height: 40%;
   width: 100%;
   text-overflow: ellipsis;
   display: -webkit-box;
