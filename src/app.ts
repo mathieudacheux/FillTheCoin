@@ -37,12 +37,12 @@ app.set('views', './src/views')
 // }
 
 // Display the home page
-app.use('/', async (req, res) => {
+app.get('/', async (req, res) => {
   try {
     const estates = await getAllEstate(req, res)
     const cities = await getAllCities(req, res)
     if (req.session.idUser) {
-      res.render('landingpage', { estates, connected: true })
+      res.render('landingpage', { estates, cities, connected: true })
     } else {
       res.render('landingpage', { estates, cities, connected: false })
     }
@@ -54,7 +54,11 @@ app.use('/', async (req, res) => {
 app.get('/properties', async (req, res) => {
   try {
     const estates = await getAllEstate(req, res)
-    res.render('properties', { estates })
+    if (req.session.idUser) {
+      res.render('properties', { estates, connected: true })
+    } else {
+      res.render('properties', { estates, connected: false })
+    }
   } catch (error) {
     res.send(error.message)
   }

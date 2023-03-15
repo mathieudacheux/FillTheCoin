@@ -2,7 +2,6 @@ import db from '../db'
 import UserType from '../models/user'
 import { genSalt, hash, compare } from 'bcrypt'
 import admin from 'firebase-admin'
-// import getAllEstate from './estateController'
 
 const postUser = async (req, res) => {
   try {
@@ -16,12 +15,11 @@ const postUser = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     })
-    const response = db
-      .collection('user')
+    db.collection('user')
       .doc(user.uid)
       .set({ ...userJson, id: user.uid })
     req.session.idUser = user.uid
-    res.status(201).send({ message: 'created', response: response })
+    return res.redirect('/')
   } catch (error) {
     res.send(error.message)
   }
@@ -38,22 +36,12 @@ const isExist = async (req, res) => {
       user.docs[0].data().password,
     )
     if (!compareUser) {
-      res.status(404).send({ message: 'Authentification failed' })
-      console.log('Authentification failed')
-
-      // const estates = await getAllEstate(req, res)
-      // return res.redirect('/landingpage')
+      return res.redirect('/')
     } else {
-      console.log('Authentificated')
-
       req.session.idUser = user.docs[0].data().id
-      res.status(200).send({ message: 'Authentificated' })
-      // const estates = await getAllEstate(req, res)
-      // return res.redirect('/landingpage')
+      return res.redirect('/')
     }
   } catch (error) {
-    console.log('catch')
-
     res.send(error.message)
   }
 }

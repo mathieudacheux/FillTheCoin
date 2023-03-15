@@ -6,7 +6,11 @@ var articleRouter = express.Router()
 articleRouter.get('/', async (req, res, next) => {
   try {
     const articles = await getAllArticles(req, res)
-    res.render('blog', { articles })
+    if (req.session.idUser) {
+      res.render('blog', { articles, connected: true })
+    } else {
+      res.render('blog', { articles, connected: false })
+    }
   } catch (error) {
     res.send(error.message)
   }

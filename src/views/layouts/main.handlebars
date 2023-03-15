@@ -89,11 +89,6 @@
       </div>
     </div>
     <header>
-      {{#if connected}}
-        <div>CONNECTION</div>
-      {{else}}
-        <div>NO CONNECTION</div>
-      {{/if}}
       <div class='headerHeader'>
         <div class='links'>
           <a href='https://www.facebook.com/' target='_blank'><img
@@ -132,7 +127,12 @@
             <li><a href='{{url}}/agents'>Agents</a></li>
             <li><a href='{{url}}/properties'>Properties</a></li>
             <li><a href='{{url}}/blog'>Blog</a></li>
-            <li><a><button class='logButtonMobile'>Login</button></a></li>
+            {{#if connected}}
+              <li><a><p class='logButtonMobile'>My Account</p></a></li>
+            {{else}}
+              <li><a><button class='logButtonMobile'>Login</button></a></li>
+            {{/if}}
+
           </ul>
         </div>
 
@@ -142,7 +142,11 @@
             <li><a href='{{url}}/agents'>Agents</a></li>
             <li><a href='{{url}}/properties'>Properties</a></li>
             <li><a href='{{url}}/blog'>Blog</a></li>
-            <li><a><button class='logButtonDesktop'>Login</button></a></li>
+            {{#if connected}}
+              <li><a><p class='logButtonDesktop'>My Account</p></a></li>
+            {{else}}
+              <li><a><button class='logButtonDesktop'>Login</button></a></li>
+            {{/if}}
           </ul>
         </div>
       </div>
