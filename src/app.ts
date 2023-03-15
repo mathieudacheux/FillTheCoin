@@ -1,6 +1,7 @@
 import express from 'express'
 import { engine } from 'express-handlebars'
 import getAllEstate from './controllers/estateController'
+import agentRouter from './routes/agentRouter'
 
 // Routers
 import articleRouter from './routes/articleRouter'
@@ -24,12 +25,13 @@ app.get('/', async (req, res, next) => {
   }
 })
 
-app.get('/agents', (req, res) => {
-  res.render('agents')
-})
-
-app.get('/properties', (req, res) => {
-  res.render('properties')
+app.get('/properties', async (req, res) => {
+  try {
+    const estates = await getAllEstate(req, res)
+    res.render('properties', { estates })
+  } catch (error) {
+    res.send(error.message)
+  }
 })
 
 // Display the inscription page
@@ -37,6 +39,8 @@ app.use('/user', userRouter)
 
 // Display the blog page
 app.use('/blog', articleRouter)
+
+app.use('/agents', agentRouter)
 
 const PORT = process.env.PORT || 3000
 
