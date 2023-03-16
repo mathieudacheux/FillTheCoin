@@ -46,4 +46,34 @@ const isExist = async (req, res) => {
   }
 }
 
-export { postUser, isExist }
+const modifyEmail = async (req, res) => {
+  try {
+    const user = await db
+      .collection('user')
+      .where('id', '==', req.session.idUser)
+      .get()
+    if (user.docs[0].data().id === req.session.idUser) {
+      admin
+        .auth()
+        .updateUser(req.session.idUser, {
+          email: req.body.email,
+        })
+        .then(() => {
+          db.collection('user')
+            .doc(req.session.idUser)
+            .update({
+              email: req.body.email,
+            })
+            .then(() => {
+              return res.redirect('/')
+            })
+        })
+    } else {
+      return res.redirect('/')
+    }
+  } catch (error) {
+    res.send(error.message)
+  }
+}
+
+export { postUser, isExist, modifyEmail }

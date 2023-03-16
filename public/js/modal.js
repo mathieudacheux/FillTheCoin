@@ -46,3 +46,25 @@ buttonRegister.addEventListener('click', () => {
 closeRegister.addEventListener('click', () => {
   modalRegister.classList.remove('is-active')
 })
+
+const buttonAccountMobile = document.querySelector('.accountButtonMobile')
+const buttonAccountDesktop = document.querySelector('.accountButtonDesktop')
+const closeModalAccount = document.querySelector('.close-modalAccount')
+
+const modalAccount = document.querySelector('.accountModal')
+
+buttonAccountDesktop.addEventListener('click', () => {
+  modalAccount.classList.add('is-active')
+})
+
+buttonAccountMobile.addEventListener('click', (e) => {
+  openNavMobileView(e)
+})
+
+closeModalAccount.addEventListener('click', () => {
+  modalAccount.classList.remove('is-active')
+})
+
+buttonAccountDesktop.addEventListener('click', () => {
+  modalAccount.classList.add('is-active')
+})

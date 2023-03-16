@@ -3,7 +3,7 @@
     <meta charset='UTF-8' />
     <meta http-equiv='X-UA-Compatible' content='IE=edge' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>My Awesome App</title>
+    <title>Real Estate Gig</title>
     <link rel='shortcut icon' href='./assets/favicon.png' type='image/x-icon' />
     <link rel='preconnect' href='https://fonts.googleapis.com' />
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
@@ -26,6 +26,27 @@
     <script defer src='./js/modal.js'></script>
   </head>
   <body>
+    <div class='accountModal'>
+      <div class='modal-content'>
+        <div class='container-close'>
+          <span class='close-modalAccount'>&times;</span>
+        </div>
+        <form action='/user/edit' method='POST'>
+          <div class='form-group'>
+            <label for='email'>Modifier votre email</label>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              placeholder='Enter your email'
+            />
+          </div>
+          <div class='form-group'>
+            <button type='submit'>Modifier</button>
+          </div>
+        </form>
+      </div>
+    </div>
     <div class='logModal'>
       <div class='modal-content'>
         <div class='container-close'>
@@ -42,7 +63,7 @@
             />
           </div>
           <div class='form-group'>
-            <label for='password'>Password</label>
+            <label for='password'>Mot de passe</label>
             <input
               type='password'
               name='password'
@@ -51,9 +72,9 @@
             />
           </div>
           <div class='form-group'>
-            <button type='submit'>Log In</button>
-            <p>Don't have an account?
-              <a class='registerButton'>Register</a></p>
+            <button type='submit'>Connexion</button>
+            <p>Pas de compte ?
+              <a class='registerButton'>Inscription</a></p>
           </div>
         </form>
       </div>
@@ -74,7 +95,7 @@
             />
           </div>
           <div class='form-group'>
-            <label for='password'>Password</label>
+            <label for='password'>Mot de passe</label>
             <input
               type='password'
               name='password'
@@ -83,7 +104,7 @@
             />
           </div>
           <div class='form-group'>
-            <button type='submit'>Register</button>
+            <button type='submit'>Inscription</button>
           </div>
         </form>
       </div>
@@ -123,14 +144,20 @@
               class='containerBurger'
             ></span></a>
           <ul class='mobileNavList'>
-            <li><a href='{{url}}/'>Home</a></li>
+            <li><a href='{{url}}/'>Accueil</a></li>
             <li><a href='{{url}}/agents'>Agents</a></li>
-            <li><a href='{{url}}/properties'>Properties</a></li>
+            <li><a href='{{url}}/properties'>Propiétés</a></li>
             <li><a href='{{url}}/blog'>Blog</a></li>
             {{#if connected}}
-              <li><a><p class='logButtonMobile'>My Account</p></a></li>
+              <li style='display: none'><a><button
+                    class='accountButtonMobile'
+                  >Mon compte</button></a></li>
+              <li><a><button class='logButtonMobile'>Connexion</button></a></li>
             {{else}}
-              <li><a><button class='logButtonMobile'>Login</button></a></li>
+              <li style='display: none'><a><button
+                    class='accountButtonMobile'
+                  >Mon compte</button></a></li>
+              <li><a><button class='logButtonMobile'>Connexion</button></a></li>
             {{/if}}
 
           </ul>
@@ -138,28 +165,36 @@
 
         <div class='header-right'>
           <ul>
-            <li><a href='{{url}}/'>Home</a></li>
+            <li><a href='{{url}}/'>Accueil</a></li>
             <li><a href='{{url}}/agents'>Agents</a></li>
-            <li><a href='{{url}}/properties'>Properties</a></li>
+            <li><a href='{{url}}/properties'>Propriétés</a></li>
             <li><a href='{{url}}/blog'>Blog</a></li>
             {{#if connected}}
-              <li><a><p class='logButtonDesktop'>My Account</p></a></li>
+              <li><a><button class='accountButtonDesktop'>Mon compte</button></a></li>
+              <li style='display: none'><a><button
+                    class='logButtonDesktop'
+                  >Connexion</button></a></li>
             {{else}}
-              <li><a><button class='logButtonDesktop'>Login</button></a></li>
+              <li style='display: none'><a><button
+                    class='accountButtonDesktop'
+                  >Mon compte</button></a></li>
+              <li><a><button
+                    class='logButtonDesktop'
+                  >Connexion</button></a></li>
             {{/if}}
           </ul>
         </div>
       </div>
       <div class='herobanner'>
         <div class='herobanner-text'>
-          <h1>Simple way to find the perfect property</h1>
-          <p>We provide a complete service for the sale,
+          <h1>Un moyen simple de trouver la propriété idéale</h1>
+          <p>Nous fournissons un service complet pour la vente,
             <br />
-            purchase or rental of real estate.
+            l'achat ou la location de biens immobiliers.
           </p>
           <div class='search'>
-            <input type='text' placeholder='What is your sector' />
-            <button>Search</button>
+            <input type='text' placeholder='Quel est votre secteur' />
+            <button>Rechercher</button>
           </div>
         </div>
       </div>
@@ -200,35 +235,36 @@
                 alt='youtube'
               /></a>
           </div>
-          <p>2023. All rights reserved</p>
+          <p>2023. Tous droits réservés</p>
         </div>
         <div class='footer-middleware-left'>
-          <h4>Take a tour</h4>
+          <h4>Visite guidée</h4>
           <div class='footer-links'>
-            <a href='{{url}}/features'>Features</a>
-            <a href='{{url}}/partners'>Partners</a>
-            <a href='{{url}}/pricing'>Pricing</a>
-            <a href='{{url}}/product'>Product</a>
+            <a href='{{url}}/features'>Caractéristiques</a>
+            <a href='{{url}}/partners'>Partenaires</a>
+            <a href='{{url}}/pricing'>Tarification</a>
+            <a href='{{url}}/product'>Produit</a>
             <a href='{{url}}/support'>Support</a>
           </div>
         </div>
         <div class='footer-middleware-right'>
-          <h4>Our company</h4>
+          <h4>Notre entreprise</h4>
           <div class='footer-links'>
-            <a href='{{url}}/about'>About Us</a>
+            <a href='{{url}}/about'>À propos de nous</a>
             <a href='{{url}}/agents'>Agents</a>
             <a href='{{url}}/blog'>Blog</a>
-            <a href='{{url}}/media'>Media</a>
-            <a href='{{url}}/contact-us'>Contact Us</a>
+            <a href='{{url}}/media'>Les médias</a>
+            <a href='{{url}}/contact-us'>Nous contacter</a>
           </div>
         </div>
         <div class='footer-right'>
           <h4>
-            Subscribe
+            S'abonner
           </h4>
-          <p>Subscribe to get latest property, blog, news from us</p>
+          <p>Inscrivez-vous pour recevoir les dernières informations sur les
+            biens immobiliers, les blogs et les actualités.</p>
           <div class='subscribe'>
-            <input type='text' placeholder='Your email' />
+            <input type='text' placeholder='Votre email' />
             <button>Ok</button>
           </div>
         </div>
