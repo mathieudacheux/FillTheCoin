@@ -1,0 +1,21 @@
+<div class='containerTitle'>
+  <h1>Propriétés</h1>
+  <p class='addProperty'>Ajouter</p>
+</div>
+<div class='container-properties'>
+  {{#each estates}}
+    <div class='card-property'>
+      <img src={{this.image}} alt={{this.description}} />
+      <div class='property-content'>
+        <h5>
+          {{this.address}}
+        </h5>
+        <p class='description'>{{this.description}}</p>
+        <div class='information-content'>
+          <p>{{this.city}}</p>
+          <p class='button-text'>${{this.price}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

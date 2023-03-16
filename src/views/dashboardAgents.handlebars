@@ -1,0 +1,18 @@
+<div class='containerTitle'>
+  <h1>Agents</h1>
+  <p class='addAgent'>Ajouter</p>
+</div>
+<div class='agents-container'>
+  {{#each agents}}
+    <div class='agent-card'>
+      <div class='agent-img'>
+        <img src={{this.image}} alt={{this.name}} />
+      </div>
+      <div class='agent-content'>
+        <h3>{{this.name}}</h3>
+        <p class='description'>{{this.description}}</p>
+        <a href='tel:{{this.phone}}' class='phone-number'>{{this.phone}}</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

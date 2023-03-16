@@ -2,6 +2,8 @@ import express from 'express'
 import { engine } from 'express-handlebars'
 import getAllCities from './controllers/citiyController'
 import getAllEstate from './controllers/estateController'
+import getAllAgents from './controllers/agentController'
+import getAllArticles from './controllers/articleController'
 import agentRouter from './routes/agentRouter'
 import session from 'express-session'
 import SESSION_SERCRET from './config'
@@ -36,7 +38,6 @@ app.set('views', './src/views')
 //   }
 // }
 
-// Display the home page
 app.get('/', async (req, res) => {
   try {
     const estates = await getAllEstate(req, res)
@@ -59,6 +60,33 @@ app.get('/properties', async (req, res) => {
     } else {
       res.render('properties', { estates, connected: false })
     }
+  } catch (error) {
+    res.send(error.message)
+  }
+})
+
+app.get('/admin', async (req, res) => {
+  try {
+    const estates = await getAllEstate(req, res)
+    res.render('dashboardProperties', { layout: 'dashboard', estates })
+  } catch (error) {
+    res.send(error.message)
+  }
+})
+
+app.get('/admin/blog', async (req, res) => {
+  try {
+    const articles = await getAllArticles(req, res)
+    res.render('dashboardBlog', { layout: 'dashboard', articles })
+  } catch (error) {
+    res.send(error.message)
+  }
+})
+
+app.get('/admin/agents', async (req, res) => {
+  try {
+    const agents = await getAllAgents(req, res)
+    res.render('dashboardAgents', { layout: 'dashboard', agents })
   } catch (error) {
     res.send(error.message)
   }
