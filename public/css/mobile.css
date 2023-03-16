@@ -32,7 +32,8 @@ footer {
 /* Modal */
 
 .logModal,
-.registerModal {
+.registerModal,
+.accountModal {
   position: fixed;
   z-index: 5;
   left: 0;
@@ -213,6 +214,17 @@ ul li a {
 }
 
 .logButtonMobile {
+  border: none;
+  background: red;
+  background-color: #e90808;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.accountButtonMobile {
   border: none;
   background: red;
   background-color: #e90808;
@@ -554,7 +566,6 @@ h4 {
 
 .explanation-right {
   width: 95%;
-  height: 300px;
   margin: 0 auto;
 }
 
@@ -570,8 +581,7 @@ h4 {
   justify-content: space-between;
   flex-flow: row wrap;
   width: 95%;
-  margin: 0 auto;
-  margin-top: 2rem;
+  margin: 2rem auto;
 }
 
 .check {
@@ -625,7 +635,7 @@ h4 {
 .card-property {
   width: 100%;
   height: 225px;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 14px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border: 1px solid #dcdceb;
@@ -640,6 +650,7 @@ h4 {
   background-size: cover;
   background-position: center;
   border-radius: 14px;
+  object-fit: cover;
 }
 
 .property-content {
@@ -647,7 +658,7 @@ h4 {
 }
 
 .property-content h5 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   width: 100%;
   height: 20%;
 }
@@ -665,8 +676,14 @@ h4 {
   align-items: center;
 }
 
-.button-text {
-  padding: 0.5rem 1rem;
+.information-content > p {
+  font-size: 0.8rem;
+  /* color: grey; */
+}
+
+.information-content .button-text {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
   background-color: red;
   color: white;
   border-radius: 5px;
@@ -684,7 +701,7 @@ h4 {
 
 .article-card {
   width: 100%;
-  height: 450px;
+  height: 470px;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
@@ -705,22 +722,32 @@ h4 {
 .article-card .article-content {
   width: 100%;
   height: 50%;
-  padding: 2rem;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .article-card .article-content h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 100%;
-  height: 40%;
+  /* height: 40%; */
 }
 
 .article-card .article-content .description {
   width: 100%;
-  height: 40%;
+  /* height: 35%; */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }
 
 .article-card .article-content .container-button {
-  height: 20%;
+  /* height: 20%; */
   width: 100%;
   display: flex;
   justify-content: flex-start;

@@ -13,7 +13,8 @@ body {
 /* Header */
 
 .logModal,
-.registerModal {
+.registerModal,
+.accountModal {
   position: fixed;
   z-index: 5;
   left: 0;
@@ -124,6 +125,17 @@ header-right {
 }
 
 .logButtonDesktop {
+  border: none;
+  background: red;
+  background-color: #e90808;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.accountButtonDesktop {
   border: none;
   background: red;
   background-color: #e90808;
