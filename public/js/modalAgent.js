@@ -1,4 +1,4 @@
-const addAgent = document.querySelector('.addAgent')
+const addAgent = document.querySelector('.addAgent, .addProperty, .addArticle')
 const modalAddAgent = document.querySelector('.modalAddAgent')
 const closeModalAddAgent = document.querySelector('.close-modalAccount')
 
