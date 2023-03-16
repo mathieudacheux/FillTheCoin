@@ -1,0 +1,50 @@
+<div class='containerTitle'>
+  <h1>Propriétés</h1>
+  <p class='addProperty'>Ajouter</p>
+</div>
+<div class='modalAddAgent'>
+  <div class='modal-content'>
+    <div class='container-close'>
+      <span class='close-modalAccount'>&times;</span>
+    </div>
+    <form action='/user/edit' method='POST'>
+      <div class='form-group'>
+        <label>Ajouter une propriété</label>
+        <input
+          type='text'
+          name='description'
+          id='description'
+          placeholder='Adresse'
+        />
+        <input type='text' name='city' id='city' placeholder='Ville' />
+        <input type='number' name='price' id='price' placeholder='Prix' />
+        <input
+          type='url'
+          name='image'
+          id='image'
+          placeholder='Lien vers une image'
+        />
+      </div>
+      <div class='form-group'>
+        <button type='submit'>Ajouter</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class='container-properties'>
+  {{#each estates}}
+    <div class='card-property'>
+      <img src={{this.image}} alt={{this.description}} />
+      <div class='property-content'>
+        <h5>
+          {{this.address}}
+        </h5>
+        <p class='description'>{{this.description}}</p>
+        <div class='information-content'>
+          <p>{{this.city}}</p>
+          <p class='button-text'>${{this.price}}</p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

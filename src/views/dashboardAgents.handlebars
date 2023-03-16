@@ -1,0 +1,47 @@
+<div class='containerTitle'>
+  <h1>Agents</h1>
+  <p class='addAgent'>Ajouter</p>
+</div>
+<div class='modalAddAgent'>
+  <div class='modal-content'>
+    <div class='container-close'>
+      <span class='close-modalAccount'>&times;</span>
+    </div>
+    <form action='/user/edit' method='POST'>
+      <div class='form-group'>
+        <label>Ajouter un agent</label>
+        <input type='text' name='name' id='name' placeholder='Prénom et nom' />
+        <textarea placeholder='Description'></textarea>
+        <input
+          type='tel'
+          name='tel'
+          id='tel'
+          placeholder='Numéro de téléphone'
+        />
+        <input
+          type='url'
+          name='image'
+          id='image'
+          placeholder='Lien vers une image'
+        />
+      </div>
+      <div class='form-group'>
+        <button type='submit'>Ajouter</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class='agents-container'>
+  {{#each agents}}
+    <div class='agent-card'>
+      <div class='agent-img'>
+        <img src={{this.image}} alt={{this.name}} />
+      </div>
+      <div class='agent-content'>
+        <h3>{{this.name}}</h3>
+        <p class='description'>{{this.description}}</p>
+        <a href='tel:{{this.phone}}' class='phone-number'>{{this.phone}}</a>
+      </div>
+    </div>
+  {{/each}}
+</div>
