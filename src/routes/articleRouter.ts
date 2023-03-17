@@ -1,4 +1,4 @@
-import getAllArticles from '../controllers/articleController'
+import { getAllArticles } from '../controllers/articleController'
 var express = require('express')
 var articleRouter = express.Router()
 
