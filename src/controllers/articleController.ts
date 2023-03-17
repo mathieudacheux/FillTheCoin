@@ -30,7 +30,7 @@ const createArticle = async (req, res) => {
       description,
       image,
     })
-    res.redirect('/admin')
+    res.redirect('/admin/blog')
   } catch (error) {
     res.send(error.message)
   }
@@ -40,6 +40,7 @@ const deleteArticle = async (req, res) => {
   try {
     const { id } = req.params
     await db.collection('articles').doc(id).delete()
+    res.redirect('/admin/blog')
   } catch (error) {
     res.send(error.message)
   }

@@ -10,6 +10,19 @@ const getAllAgents = async (req, res) => {
   }
 }
 
+const allAgents = async (req, res, next) => {
+  try {
+    const agents = await getAllAgents(req, res)
+    if (req.session.idUser) {
+      res.render('agents', { agents, connected: true })
+    } else {
+      res.render('agents', { agents, connected: false })
+    }
+  } catch (error) {
+    res.send(error.message)
+  }
+}
+
 const createAgent = async (req, res) => {
   try {
     const { name, description, phone, image } = req.body
@@ -23,7 +36,7 @@ const createAgent = async (req, res) => {
     })
     return res.redirect('/admin/agents')
   } catch (error) {
-    return res.redirect('/admin/agents')
+    res.send(error.message)
   }
 }
 
@@ -31,7 +44,7 @@ const deleteAgent = async (req, res) => {
   try {
     const { id } = req.params
     await db.collection('agents').doc(id).delete()
-    return res.redirect('/admin/agents')
+    res.redirect('/admin/agents')
   } catch (error) {
     return res.redirect('/admin/agents')
   }
@@ -53,4 +66,4 @@ const updateAgent = async (req, res) => {
   }
 }
 
-export { getAllAgents, createAgent, deleteAgent, updateAgent }
+export { getAllAgents, createAgent, deleteAgent, updateAgent, allAgents }

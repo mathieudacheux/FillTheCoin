@@ -1,4 +1,8 @@
-import { createEstate, allEstates } from '../controllers/estateController'
+import {
+  createEstate,
+  allEstates,
+  deleteEstate,
+} from '../controllers/estateController'
 var express = require('express')
 var propertiesRouter = express.Router()
 
@@ -6,5 +10,7 @@ var propertiesRouter = express.Router()
 propertiesRouter.get('/', allEstates)
 
 propertiesRouter.post('/add', createEstate)
+
+propertiesRouter.get('/delete/:id', deleteEstate)
 
 export default propertiesRouter

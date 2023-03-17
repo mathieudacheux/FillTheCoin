@@ -1,6 +1,7 @@
 import {
   allArticles,
   createArticle,
+  deleteArticle,
   getAllArticles,
 } from '../controllers/articleController'
 var express = require('express')
@@ -23,5 +24,7 @@ articleRouter.get('/', async (req, res, next) => {
 articleRouter.get('/', allArticles)
 
 articleRouter.post('/add', createArticle)
+
+articleRouter.get('/delete/:id', deleteArticle)
 
 export default articleRouter

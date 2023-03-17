@@ -7,15 +7,15 @@
     <div class='container-close'>
       <span class='close-modalAccount'>&times;</span>
     </div>
-    <form action='/user/edit' method='POST'>
+    <form action='/agents/add' method='POST'>
       <div class='form-group'>
         <label>Ajouter un agent</label>
         <input type='text' name='name' id='name' placeholder='Prénom et nom' />
-        <textarea placeholder='Description'></textarea>
+        <textarea placeholder='Description' name='description'></textarea>
         <input
           type='tel'
-          name='tel'
-          id='tel'
+          name='phone'
+          id='phone'
           placeholder='Numéro de téléphone'
         />
         <input

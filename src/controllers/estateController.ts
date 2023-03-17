@@ -43,6 +43,7 @@ const deleteEstate = async (req, res) => {
   try {
     const { id } = req.params
     await db.collection('estates').doc(id).delete()
+    res.redirect('/admin')
   } catch (error) {
     res.send(error.message)
   }
