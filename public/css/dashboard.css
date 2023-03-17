@@ -475,3 +475,10 @@ form button:hover {
 .is-visible {
   display: flex;
 }
+
+.openUpdateModal {
+  position: absolute;
+  font-size: 2rem;
+  cursor: pointer;
+  color: red;
+}
