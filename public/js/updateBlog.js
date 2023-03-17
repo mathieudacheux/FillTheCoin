@@ -10,7 +10,6 @@ updateBlog.forEach((btn) => {
     const title = card.querySelector('.titleBlog').textContent.trim()
     const description = card.querySelector('.description').textContent.trim()
     const id = card.querySelector('a').href.split('/')[5]
-    console.log(id)
 
     const descriptionForm = document.querySelector('#descriptionForm')
     const titleForm = document.querySelector('#titleForm')
