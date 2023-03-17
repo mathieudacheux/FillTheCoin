@@ -34,6 +34,12 @@
 <div class='agents-container'>
   {{#each agents}}
     <div class='agent-card'>
+      <div class='container-delete'>
+        <a
+          href='{{url}}/agents/delete/{{this.id}}'
+          class='delete-agent'
+        >&times;</a>
+      </div>
       <div class='agent-img'>
         <img src={{this.image}} alt={{this.name}} />
       </div>

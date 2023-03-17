@@ -33,6 +33,9 @@
 <div class='container-articles'>
   {{#each articles}}
     <div class='article-card'>
+      <div class='container-deleteBlog'>
+        <a href='/blog/delete/{{this.id}}'>&times;</a>
+      </div>
       <img src={{this.image}} alt={{this.title}} />
       <div class='article-content'>
         <h3>
