@@ -9,6 +9,8 @@ updateBlog.forEach((btn) => {
     const image = card.querySelector('.imgBlog').src.trim()
     const title = card.querySelector('.titleBlog').textContent.trim()
     const description = card.querySelector('.description').textContent.trim()
+    const id = card.querySelector('a').href.split('/')[5]
+    console.log(id)
 
     const descriptionForm = document.querySelector('#descriptionForm')
     const titleForm = document.querySelector('#titleForm')
@@ -21,7 +23,7 @@ updateBlog.forEach((btn) => {
 
     // Set the action of the form
     const form = document.querySelector('#updateBlogForm')
-    form.action = `/properties/update/${id}`
+    form.action = `/blog/update/${id}`
   })
 })
 
