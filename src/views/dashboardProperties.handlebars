@@ -31,21 +31,57 @@
     </form>
   </div>
 </div>
+<div class='modalUpdateAgent'>
+  <div class='modal-content'>
+    <div class='container-close'>
+      <span class='close-modalUpdate'>&times;</span>
+    </div>
+    <form action='/properties/update' method='POST' id='updatePropertyForm'>
+      <div class='form-group'>
+        <label>Ajouter une propriété</label>
+        <input
+          type='text'
+          name='address'
+          id='addressForm'
+          placeholder='Adresse'
+        />
+        <input
+          type='text'
+          name='description'
+          id='descriptionForm'
+          placeholder='Description'
+        />
+        <input type='text' name='city' id='cityForm' placeholder='Ville' />
+        <input type='number' name='price' id='priceForm' placeholder='Prix' />
+        <input
+          type='url'
+          name='image'
+          id='imageForm'
+          placeholder='Lien vers une image'
+        />
+      </div>
+      <div class='form-group'>
+        <button type='submit'>Ajouter</button>
+      </div>
+    </form>
+  </div>
+</div>
 <div class='container-properties'>
   {{#each estates}}
-    <div class='card-property'>
+    <div class='card-property {{this.id}}'>
       <div class='container-deleteProperty'>
+        <p class='openUpdateModal'>&#9998;</p>
         <a href='/properties/delete/{{this.id}}'>&times;</a>
       </div>
-      <img src={{this.image}} alt={{this.description}} />
+      <img class='img-property' src={{this.image}} alt={{this.description}} />
       <div class='property-content'>
-        <h5>
+        <h5 class='address-property'>
           {{this.address}}
         </h5>
-        <p class='description'>{{this.description}}</p>
+        <p class='description description-property'>{{this.description}}</p>
         <div class='information-content'>
-          <p>{{this.city}}</p>
-          <p class='button-text'>${{this.price}}</p>
+          <p class='city-property'>{{this.city}}</p>
+          <p class='button-text price-property'>${{this.price}}</p>
         </div>
       </div>
     </div>
