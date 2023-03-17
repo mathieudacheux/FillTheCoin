@@ -10,16 +10,27 @@ const getAllArticles = async (req, res) => {
   }
 }
 
+const allArticles = async (req, res) => {
+  try {
+    const articles = await db.collection('articles').get()
+    const articleList = articles.docs.map((doc) => doc.data())
+    res.render('blog', { layout: 'main', articles: articleList })
+  } catch (error) {
+    res.redirect('/')
+  }
+}
+
 const createArticle = async (req, res) => {
   try {
-    const { title, content, image } = req.body
+    const { title, description, image } = req.body
     const uid = db.collection('articles').doc().id
     await db.collection('articles').doc(uid).set({
       id: uid,
       title,
-      content,
+      description,
       image,
     })
+    res.redirect('/admin/blog')
   } catch (error) {
     res.send(error.message)
   }
@@ -29,6 +40,7 @@ const deleteArticle = async (req, res) => {
   try {
     const { id } = req.params
     await db.collection('articles').doc(id).delete()
+    res.redirect('/admin/blog')
   } catch (error) {
     res.send(error.message)
   }
@@ -37,15 +49,22 @@ const deleteArticle = async (req, res) => {
 const updateArticle = async (req, res) => {
   try {
     const { id } = req.params
-    const { title, content, image } = req.body
+    const { title, description, image } = req.body
     await db.collection('articles').doc(id).update({
       title,
-      content,
+      description,
       image,
     })
+    res.redirect('/admin/blog')
   } catch (error) {
     res.send(error.message)
   }
 }
 
-export { getAllArticles, createArticle, deleteArticle, updateArticle }
+export {
+  getAllArticles,
+  createArticle,
+  deleteArticle,
+  updateArticle,
+  allArticles,
+}

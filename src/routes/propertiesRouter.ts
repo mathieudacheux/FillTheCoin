@@ -1,19 +1,19 @@
-import { getAllEstate } from '../controllers/estateController'
+import {
+  createEstate,
+  allEstates,
+  deleteEstate,
+  updateEstate,
+} from '../controllers/estateController'
 var express = require('express')
 var propertiesRouter = express.Router()
 
 // middleware that is specific to this router
-propertiesRouter.get('/', async (req, res, next) => {
-  try {
-    const properties = await getAllEstate(req, res)
-    if (req.session.idUser) {
-      res.render('properties', { properties, connected: true })
-    } else {
-      res.render('properties', { properties, connected: false })
-    }
-  } catch (error) {
-    res.send(error.message)
-  }
-})
+propertiesRouter.get('/', allEstates)
+
+propertiesRouter.post('/add', createEstate)
+
+propertiesRouter.get('/delete/:id', deleteEstate)
+
+propertiesRouter.post('/update/:id', updateEstate)
 
 export default propertiesRouter

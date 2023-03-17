@@ -7,16 +7,18 @@
     <div class='container-close'>
       <span class='close-modalAccount'>&times;</span>
     </div>
-    <form action='/estate/add' method='POST'>
+    <form action='/properties/add' method='POST'>
       <div class='form-group'>
         <label>Ajouter une propriété</label>
+        <input type='text' name='address' id='address' placeholder='Adresse' />
         <input
           type='text'
           name='description'
           id='description'
-          placeholder='Adresse'
+          placeholder='Description'
         />
         <input type='text' name='city' id='city' placeholder='Ville' />
+        <input type='text' name='country' id='country' placeholder='Pays' />
         <input type='number' name='price' id='price' placeholder='Prix' />
         <input
           type='url'
