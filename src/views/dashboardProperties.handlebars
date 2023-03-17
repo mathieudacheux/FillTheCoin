@@ -36,6 +36,9 @@
 <div class='container-properties'>
   {{#each estates}}
     <div class='card-property'>
+      <div class='container-deleteProperty'>
+        <a href='/agents/property/{{this.id}}'>&times;</a>
+      </div>
       <img src={{this.image}} alt={{this.description}} />
       <div class='property-content'>
         <h5>

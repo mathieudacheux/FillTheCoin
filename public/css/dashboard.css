@@ -185,6 +185,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 .card-property img {
@@ -240,6 +241,7 @@ body {
   justify-content: space-between;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  position: relative;
 }
 
 .article-card img {
@@ -382,4 +384,51 @@ form button:hover {
 .form-group p a {
   color: red;
   text-decoration: none;
+}
+
+.container-delete {
+  width: 100%;
+  position: relative;
+}
+
+.container-delete a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: red;
+}
+
+.container-deleteBlog {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.container-deleteBlog a {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: red;
+}
+
+.container-deleteProperty {
+  width: 90%;
+  height: calc(100% - 2rem);
+  position: absolute;
+}
+
+.container-deleteProperty a {
+  position: absolute;
+  top: -33px;
+  right: 0px;
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: red;
 }
