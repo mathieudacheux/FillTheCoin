@@ -55,6 +55,7 @@ const updateArticle = async (req, res) => {
       description,
       image,
     })
+    res.redirect('/admin/blog')
   } catch (error) {
     res.send(error.message)
   }

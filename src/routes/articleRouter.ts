@@ -3,6 +3,7 @@ import {
   createArticle,
   deleteArticle,
   getAllArticles,
+  updateArticle,
 } from '../controllers/articleController'
 var express = require('express')
 var articleRouter = express.Router()
@@ -26,5 +27,7 @@ articleRouter.get('/', allArticles)
 articleRouter.post('/add', createArticle)
 
 articleRouter.get('/delete/:id', deleteArticle)
+
+articleRouter.post('/update/:id', updateArticle)
 
 export default articleRouter
