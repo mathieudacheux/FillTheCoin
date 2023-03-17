@@ -1,10 +1,11 @@
 import express from 'express'
 import { engine } from 'express-handlebars'
 import getAllCities from './controllers/citiyController'
-import getAllEstate from './controllers/estateController'
-import getAllAgents from './controllers/agentController'
-import getAllArticles from './controllers/articleController'
+import { getAllEstate } from './controllers/estateController'
+import { getAllAgents } from './controllers/agentController'
+import { getAllArticles } from './controllers/articleController'
 import agentRouter from './routes/agentRouter'
+import propertiesRouter from './routes/propertiesRouter'
 import session from 'express-session'
 import SESSION_SERCRET from './config'
 
@@ -52,18 +53,7 @@ app.get('/', async (req, res) => {
   }
 })
 
-app.get('/properties', async (req, res) => {
-  try {
-    const estates = await getAllEstate(req, res)
-    if (req.session.idUser) {
-      res.render('properties', { estates, connected: true })
-    } else {
-      res.render('properties', { estates, connected: false })
-    }
-  } catch (error) {
-    res.send(error.message)
-  }
-})
+app.get('/properties', propertiesRouter)
 
 app.get('/admin', async (req, res) => {
   try {
