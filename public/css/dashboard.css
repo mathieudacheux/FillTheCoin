@@ -444,6 +444,16 @@ form button:hover {
   color: red;
 }
 
+.container-deleteBlog p {
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: red;
+}
+
 .modalUpdateAgent {
   position: fixed;
   display: none;
@@ -459,5 +469,9 @@ form button:hover {
 }
 
 .is-display {
+  display: flex;
+}
+
+.is-visible {
   display: flex;
 }
