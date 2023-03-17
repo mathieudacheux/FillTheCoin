@@ -1,7 +1,7 @@
 import express from 'express'
 import { engine } from 'express-handlebars'
 import getAllCities from './controllers/citiyController'
-import { getAllEstate } from './controllers/estateController'
+import { get4LastEstate, getAllEstate } from './controllers/estateController'
 import { getAllAgents } from './controllers/agentController'
 import { getAllArticles } from './controllers/articleController'
 import { isAdmin } from './controllers/userController'
@@ -31,18 +31,9 @@ app.engine('handlebars', engine())
 app.set('view engine', 'handlebars')
 app.set('views', './src/views')
 
-// const protectionRoute = async (req, res, next) => {
-//   if (!req.session.idUser) {
-//     const estates = await getAllEstate(req, res)
-//     res.redirect('landingpage', { estates })
-//   } else {
-//     next()
-//   }
-// }
-
 app.get('/', async (req, res) => {
   try {
-    const estates = await getAllEstate(req, res)
+    const estates = await get4LastEstate(req, res)
     const cities = await getAllCities(req, res)
     if (req.session.idUser) {
       res.render('landingpage', { estates, cities, connected: true })
