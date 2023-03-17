@@ -10,16 +10,30 @@ const getAllEstate = async (req, res) => {
   }
 }
 
+const allEstates = async (req, res) => {
+  try {
+    const estates = await db.collection('estates').get()
+    const estateList = estates.docs.map((doc) => doc.data())
+    res.render('properties', { layout: 'main', estates: estateList })
+  } catch (error) {
+    res.redirect('/')
+  }
+}
+
 const createEstate = async (req, res) => {
   try {
-    const { title, content, image } = req.body
+    const { address, description, country, city, price, image } = req.body
     const uid = db.collection('estates').doc().id
     await db.collection('estates').doc(uid).set({
       id: uid,
-      title,
-      content,
+      address,
+      description,
+      country,
+      city,
+      price,
       image,
     })
+    res.redirect('/admin')
   } catch (error) {
     res.send(error.message)
   }
@@ -37,10 +51,13 @@ const deleteEstate = async (req, res) => {
 const updateEstate = async (req, res) => {
   try {
     const { id } = req.params
-    const { title, content, image } = req.body
+    const { address, description, country, city, price, image } = req.body
     await db.collection('estates').doc(id).update({
-      title,
-      content,
+      address,
+      description,
+      country,
+      city,
+      price,
       image,
     })
   } catch (error) {
@@ -48,4 +65,4 @@ const updateEstate = async (req, res) => {
   }
 }
 
-export { getAllEstate, createEstate, deleteEstate, updateEstate }
+export { getAllEstate, createEstate, deleteEstate, updateEstate, allEstates }

@@ -1,4 +1,8 @@
-import { getAllArticles } from '../controllers/articleController'
+import {
+  allArticles,
+  createArticle,
+  getAllArticles,
+} from '../controllers/articleController'
 var express = require('express')
 var articleRouter = express.Router()
 
@@ -15,5 +19,9 @@ articleRouter.get('/', async (req, res, next) => {
     res.send(error.message)
   }
 })
+
+articleRouter.get('/', allArticles)
+
+articleRouter.post('/add', createArticle)
 
 export default articleRouter

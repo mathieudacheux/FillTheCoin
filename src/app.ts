@@ -53,7 +53,7 @@ app.get('/', async (req, res) => {
   }
 })
 
-app.get('/properties', propertiesRouter)
+app.use('/properties', propertiesRouter)
 
 app.get('/admin', async (req, res) => {
   try {
