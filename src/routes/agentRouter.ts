@@ -1,4 +1,9 @@
-import getAllAgents from '../controllers/agentController'
+import {
+  createAgent,
+  deleteAgent,
+  getAllAgents,
+  updateAgent,
+} from '../controllers/agentController'
 var express = require('express')
 var agentRouter = express.Router()
 
@@ -14,5 +19,11 @@ agentRouter.get('/', async (req, res, next) => {
     res.send(error.message)
   }
 })
+
+agentRouter.post('/create', createAgent)
+
+agentRouter.post('/update/:id', updateAgent)
+
+agentRouter.post('/delete/:id', deleteAgent)
 
 export default agentRouter

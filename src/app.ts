@@ -1,7 +1,7 @@
 import express from 'express'
 import { engine } from 'express-handlebars'
 import getAllCities from './controllers/citiyController'
-import getAllEstate from './controllers/estateController'
+import { getAllEstate } from './controllers/estateController'
 import agentRouter from './routes/agentRouter'
 import session from 'express-session'
 import SESSION_SERCRET from './config'

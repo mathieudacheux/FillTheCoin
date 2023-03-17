@@ -10,4 +10,42 @@ const getAllArticles = async (req, res) => {
   }
 }
 
-export default getAllArticles
+const createArticle = async (req, res) => {
+  try {
+    const { title, content, image } = req.body
+    const uid = db.collection('articles').doc().id
+    await db.collection('articles').doc(uid).set({
+      id: uid,
+      title,
+      content,
+      image,
+    })
+  } catch (error) {
+    res.send(error.message)
+  }
+}
+
+const deleteArticle = async (req, res) => {
+  try {
+    const { id } = req.params
+    await db.collection('articles').doc(id).delete()
+  } catch (error) {
+    res.send(error.message)
+  }
+}
+
+const updateArticle = async (req, res) => {
+  try {
+    const { id } = req.params
+    const { title, content, image } = req.body
+    await db.collection('articles').doc(id).update({
+      title,
+      content,
+      image,
+    })
+  } catch (error) {
+    res.send(error.message)
+  }
+}
+
+export { getAllArticles, createArticle, deleteArticle, updateArticle }
