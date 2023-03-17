@@ -22,13 +22,12 @@ const allEstates = async (req, res) => {
 
 const createEstate = async (req, res) => {
   try {
-    const { address, description, country, city, price, image } = req.body
+    const { address, description, city, price, image } = req.body
     const uid = db.collection('estates').doc().id
     await db.collection('estates').doc(uid).set({
       id: uid,
       address,
       description,
-      country,
       city,
       price,
       image,
@@ -52,15 +51,15 @@ const deleteEstate = async (req, res) => {
 const updateEstate = async (req, res) => {
   try {
     const { id } = req.params
-    const { address, description, country, city, price, image } = req.body
+    const { address, description, city, price, image } = req.body
     await db.collection('estates').doc(id).update({
       address,
       description,
-      country,
       city,
       price,
       image,
     })
+    res.redirect('/admin')
   } catch (error) {
     res.send(error.message)
   }
