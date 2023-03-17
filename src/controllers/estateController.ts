@@ -10,6 +10,17 @@ const getAllEstate = async (req, res) => {
   }
 }
 
+const get4LastEstate = async (req, res) => {
+  try {
+    const estates = await db.collection('estates').get()
+    const estateList = estates.docs.map((doc) => doc.data())
+    const last4Estate = estateList.slice(estateList.length - 4)
+    return last4Estate
+  } catch (error) {
+    res.send(error.message)
+  }
+}
+
 const allEstates = async (req, res) => {
   try {
     const estates = await db.collection('estates').get()
@@ -65,4 +76,11 @@ const updateEstate = async (req, res) => {
   }
 }
 
-export { getAllEstate, createEstate, deleteEstate, updateEstate, allEstates }
+export {
+  getAllEstate,
+  createEstate,
+  deleteEstate,
+  updateEstate,
+  allEstates,
+  get4LastEstate,
+}
