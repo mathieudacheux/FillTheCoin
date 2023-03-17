@@ -14,6 +14,6 @@ propertiesRouter.post('/add', createEstate)
 
 propertiesRouter.get('/delete/:id', deleteEstate)
 
-propertiesRouter.get('/update/:id', updateEstate)
+propertiesRouter.post('/update/:id', updateEstate)
 
 export default propertiesRouter
