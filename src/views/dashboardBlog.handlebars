@@ -30,15 +30,43 @@
     </form>
   </div>
 </div>
+<div class='modalUpdateAgent modalUpdateBlog'>
+  <div class='modal-content'>
+    <div class='container-close'>
+      <span class='close-modalUpdateBlog'>&times;</span>
+    </div>
+    <form action='/blog/update' method='POST' id='updateBlogForm'>
+      <div class='form-group'>
+        <label>Modifier un article</label>
+        <textarea
+          name='description'
+          id='descriptionForm'
+          placeholder='Description'
+        ></textarea>
+        <input type='text' name='title' id='titleForm' placeholder='Titre' />
+        <input
+          type='url'
+          name='image'
+          id='imageForm'
+          placeholder='Lien vers une image'
+        />
+      </div>
+      <div class='form-group'>
+        <button type='submit'>Modifier</button>
+      </div>
+    </form>
+  </div>
+</div>
 <div class='container-articles'>
   {{#each articles}}
     <div class='article-card'>
       <div class='container-deleteBlog'>
+        <p class='openUpdateModal openUpdateBlog'>&#9998;</p>
         <a href='/blog/delete/{{this.id}}'>&times;</a>
       </div>
-      <img src={{this.image}} alt={{this.title}} />
+      <img src={{this.image}} alt={{this.title}} class='imgBlog' />
       <div class='article-content'>
-        <h3>
+        <h3 class='titleBlog'>
           {{this.title}}
         </h3>
         <p class='description'>{{this.description}}</p>
@@ -49,3 +77,4 @@
     </div>
   {{/each}}
 </div>
+<script defer src='../js/updateBlog.js'></script>
