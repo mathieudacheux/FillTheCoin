@@ -28,7 +28,7 @@ updateBlog.forEach((btn) => {
 
     // Set the action of the form
     const form = document.querySelector('#updateBlogForm')
-    form.action = `/agent/update/${id}`
+    form.action = `/agents/update/${id}`
   })
 })
 

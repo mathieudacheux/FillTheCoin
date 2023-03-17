@@ -60,9 +60,9 @@ const updateAgent = async (req, res) => {
       phone,
       image,
     })
-    return res.redirect('/admin/agents')
+    res.redirect('/admin/agents')
   } catch (error) {
-    return res.redirect('/admin/agents')
+    res.send(error.message)
   }
 }
 

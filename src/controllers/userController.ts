@@ -46,6 +46,20 @@ const isExist = async (req, res) => {
   }
 }
 
+const isAdmin = (req, callback) => {
+  try {
+    db.collection('user')
+      .where('id', '==', req.session.idUser)
+      .get()
+      .then((user) => {
+        const isUserAdmin = user.docs[0].data().admin
+        return callback(isUserAdmin)
+      })
+  } catch (error) {
+    return callback(false)
+  }
+}
+
 const modifyEmail = async (req, res) => {
   try {
     const user = await db
@@ -76,4 +90,4 @@ const modifyEmail = async (req, res) => {
   }
 }
 
-export { postUser, isExist, modifyEmail }
+export { postUser, isExist, modifyEmail, isAdmin }
