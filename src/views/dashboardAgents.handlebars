@@ -11,7 +11,7 @@
       <div class='form-group'>
         <label>Ajouter un agent</label>
         <input type='text' name='name' id='name' placeholder='Prénom et nom' />
-        <textarea placeholder='Description'></textarea>
+        <textarea placeholder='Description' id='description'></textarea>
         <input
           type='tel'
           name='tel'
@@ -31,24 +31,59 @@
     </form>
   </div>
 </div>
+<div class='modalUpdateAgent modalUpdateBlog modalUpdateProperty'>
+  <div class='modal-content'>
+    <div class='container-close'>
+      <span class='close-modalUpdateBlog'>&times;</span>
+    </div>
+    <form action='/blog/update' method='POST' id='updateBlogForm'>
+      <div class='form-group'>
+        <label>Modifier un agent</label>
+        <input
+          type='text'
+          name='name'
+          id='nameForm'
+          placeholder='Prénom et nom'
+        />
+        <textarea placeholder='Description' id='descriptionForm'></textarea>
+        <input
+          type='tel'
+          name='tel'
+          id='telForm'
+          placeholder='Numéro de téléphone'
+        />
+        <input
+          type='url'
+          name='image'
+          id='imageForm'
+          placeholder='Lien vers une image'
+        />
+      </div>
+      <div class='form-group'>
+        <button type='submit'>Modifier</button>
+      </div>
+    </form>
+  </div>
+</div>
 <div class='agents-container'>
   {{#each agents}}
     <div class='agent-card'>
       <div class='container-delete'>
+        <p class='openUpdateModal'>&#9998;</p>
         <a
           href='{{url}}/agents/delete/{{this.id}}'
           class='delete-agent'
         >&times;</a>
       </div>
       <div class='agent-img'>
-        <img src={{this.image}} alt={{this.name}} />
+        <img src={{this.image}} alt={{this.name}} class='imgAgent' />
       </div>
       <div class='agent-content'>
-        <h3>{{this.name}}</h3>
+        <h3 class='nameAgent'>{{this.name}}</h3>
         <p class='description'>{{this.description}}</p>
         <a href='tel:{{this.phone}}' class='phone-number'>{{this.phone}}</a>
       </div>
     </div>
   {{/each}}
 </div>
-<script defer src='../js/updateAgent.js'></script>
+<script defer src='../js/updateProperty.js'></script>
