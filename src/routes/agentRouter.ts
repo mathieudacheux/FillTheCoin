@@ -24,6 +24,6 @@ agentRouter.post('/create', createAgent)
 
 agentRouter.post('/update/:id', updateAgent)
 
-agentRouter.post('/delete/:id', deleteAgent)
+agentRouter.get('/delete/:id', deleteAgent)
 
 export default agentRouter
