@@ -161,9 +161,8 @@ header-right {
       rgba(255, 255, 255, 0)
     ),
     url('../assets/herobanner.jpg');
-
   background-size: cover;
-  background-position: center;
+  background-position: left;
   border-radius: 14px;
   display: flex;
   justify-content: flex-start;
@@ -662,7 +661,7 @@ h4 {
 
 .agent-card {
   height: 525px;
-  width: 350px;
+  width: 400px;
   border-radius: 14px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   padding: 2rem;
