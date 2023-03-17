@@ -7,13 +7,12 @@ updateBlog.forEach((btn) => {
     modalUpdateBlog.classList.add('is-visible')
     const card = e.target.parentElement.parentElement
     const image = card.querySelector('.imgAgent').src
-    console.log(image)
+
     const name = card.querySelector('.nameAgent').textContent.trim()
-    console.log(name)
+
     const description = card.querySelector('.description').textContent.trim()
-    console.log(description)
+
     const phone = card.querySelector('.phone-number').textContent.trim()
-    console.log(phone)
     const id = card.querySelector('a').href.split('/')[5]
 
     const nameForm = document.querySelector('#nameForm')
