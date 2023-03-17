@@ -33,8 +33,8 @@
 <div class='container-articles'>
   {{#each articles}}
     <div class='article-card'>
-      <div class='container-delete'>
-        <a href='/agents/property/{{this.id}}'>&times;</a>
+      <div class='container-deleteBlog'>
+        <a href='/blog/delete/{{this.id}}'>&times;</a>
       </div>
       <img src={{this.image}} alt={{this.title}} />
       <div class='article-content'>
