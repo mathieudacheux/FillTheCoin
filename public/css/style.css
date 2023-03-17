@@ -161,9 +161,8 @@ header-right {
       rgba(255, 255, 255, 0)
     ),
     url('../assets/herobanner.jpg');
-
   background-size: cover;
-  background-position: center;
+  background-position: left;
   border-radius: 14px;
   display: flex;
   justify-content: flex-start;
