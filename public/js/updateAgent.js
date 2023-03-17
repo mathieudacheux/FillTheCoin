@@ -6,7 +6,7 @@ openUpdateModal.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     modalUpdateAgent.classList.add('is-display')
     const card = e.target.parentElement.parentElement
-    const address = card.querySelector('.address-property').textContent
+    const address = card.querySelector('.address-property').textContent.trim()
     const image = card.querySelector('.img-property').src
     const price = card.querySelector('.price-property').textContent.slice(1)
     const city = card.querySelector('.city-property').textContent
